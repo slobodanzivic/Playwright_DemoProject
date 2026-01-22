@@ -61,7 +61,7 @@ test('Register to the application @master',async({page})=>{
 
     //Assertion to verify successful registration 
     const confirmationMessageText = await registrationConfirmationPage.getConfirmationMessageText();
-    expect(confirmationMessageText).toBe("Your Account Has Been Created!_________++++++");
+    expect(confirmationMessageText).toBe("Your Account Has Been Created!");
 
 })
 
