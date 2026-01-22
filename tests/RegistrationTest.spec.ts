@@ -27,7 +27,7 @@ test.afterEach(async({page})=>{
 })
 
 
-test('Register to the application @master',async({page})=>{ 
+test('Register to the application',async({page})=>{ 
 
     // Add further registration steps here
     await homePage.clickOnMyAccount();

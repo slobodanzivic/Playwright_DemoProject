@@ -35,7 +35,7 @@ test.afterEach(async ({ page }) => {
     await page.waitForTimeout(3000);
     await page.close();
 })  
-test('Logout Test @master', async ({ page }) => {
+test('Logout Test', async ({ page }) => {
 
     //Login steps
     await homePage.clickOnMyAccount();
