@@ -13,7 +13,7 @@ const jsonTestdata = DataProvider.getDataFromJson(jsonPath);
 
 for (const data of jsonTestdata) {
 
-    test(`Login test with data from JSON file: ${data.testName}`, async ({ page }) => {
+    test(`Login test with data from JSON file: ${data.testName} @master` , async ({ page }) => {
 
         const homePage = new HomePage(page);
         const loginPage = new LoginPage(page);
