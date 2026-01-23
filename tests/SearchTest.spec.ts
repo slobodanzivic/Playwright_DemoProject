@@ -53,7 +53,7 @@ test.describe("Search Functionality Test Suite @master",()=>{
 
     test("Search Product Test: Search with empty input",async({page})=>{
 
-        await homePage.searchProduct(testConfig.emtyProductName);
+        await homePage.searchProduct(testConfig.emptyProductName);
         expect (await searchResultsPage.getConfirmationMessageText()).toContain("There is no product that matches the search criteria.");
         console.log(`Search results header contains text: 'There is no product that matches the search criteria.'`);    
     })
