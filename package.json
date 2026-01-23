@@ -8,7 +8,8 @@
     "test:master" :"playwright test --grep @master",
     "test:sanity" :"playwright test --grep @sanity",
     "test:regression" :"playwright test --grep @regression",
-    "test:master:allBrowsers" :"playwright test --project=chromium --project=firefox --project=webkit --grep @master"
+    "test:master:allBrowsers" :"playwright test --project=chromium --project=firefox --project=webkit --grep @master",
+    "test:master:chromium" :"playwright test --project=chromium --grep @master"
     
   },
   "keywords": [],

@@ -45,12 +45,10 @@ for (const data of jsonTestdata) {
         await loginPage.clickOnPasswordInput();
         await loginPage.enterPassword(data.password);
 
-        await page.waitForTimeout(2000);
         await loginPage.clickOnLoginButton();
 
-        await page.waitForTimeout(3000);
 
-        if (data.expected.toLowerCase() === "success") {
+        if (data.expectedResult.toLowerCase() === "successfullogin") {
             const myAccountHeadingText = await myAccountPage.getMyAccountPageHeadingText();
             expect(myAccountHeadingText).toBe("My Account");
 
