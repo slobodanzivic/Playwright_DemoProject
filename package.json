@@ -7,7 +7,9 @@
   "scripts": {
     "test:master" :"playwright test --grep @master",
     "test:sanity" :"playwright test --grep @sanity",
-    "test:regression" :"playwright test --grep @regression"
+    "test:regression" :"playwright test --grep @regression",
+    "test:master:allBrowsers" :"playwright test --project=chromium --project=firefox --project=webkit --grep @master"
+    
   },
   "keywords": [],
   "author": "",
