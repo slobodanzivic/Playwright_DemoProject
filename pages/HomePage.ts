@@ -1,3 +1,4 @@
+import { th } from "@faker-js/faker";
 import{Page,Locator} from "@playwright/test"
 
 export class HomePage{
@@ -8,6 +9,8 @@ export class HomePage{
     private readonly myAccountLink:Locator;
     private readonly registerLink:Locator;
     private readonly loginLink:Locator;
+    private readonly searchBox:Locator; 
+    private readonly searchButton:Locator;  
 
 
     //Constructor
@@ -16,6 +19,8 @@ export class HomePage{
         this.myAccountLink=page.locator('a[title="My Account"] span[class="hidden-xs hidden-sm hidden-md"]');
         this.registerLink=page.locator('a[href="https://tutorialsninja.com/demo/index.php?route=account/register"]');
         this.loginLink=page.locator('a[href="https://tutorialsninja.com/demo/index.php?route=account/login"]');
+        this.searchBox=page.locator('input[placeholder="Search"]');
+        this.searchButton=page.locator('button[class="btn btn-default btn-lg"]');
     }
 
     async isHomePageExists() {
@@ -72,6 +77,19 @@ export class HomePage{
 
 }
 
-
+//Click on Search Box, enter product name and click on Search Button
+async searchProduct(productName:string){    
+    try
+    {
+        await this.searchBox.click();
+        await this.searchBox.fill(productName);
+        await this.searchButton.click();
+    }   
+    catch(error)
+    {
+        console.log(`Exeption occured while searching for product '${productName}': ${error}`)
+        throw error;
+    }   
+}
 }
 

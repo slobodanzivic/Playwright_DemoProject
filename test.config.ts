@@ -8,7 +8,10 @@ email="slobodan.m.zivic@gmail.com"
 password= "Test123?"
 
 //productdetails
-productName="MacBook"
+monitorProductName="Samsung SyncMaster 941BW"
+cameraProductName="Canon EOS 5D"
+tabletProductName="Samsung Galaxy Tab 10.1"
+emtyProductName=""
 productQuntity="2"
 totalPrice=""
 
