@@ -4,7 +4,7 @@ import { TestConfig } from "../test.config";
 import { SearchResultsPage } from "../pages/SearchResultsPage";
 import { afterEach } from "node:test";
 
-test.describe("Search Functionality Test Suite",()=>{
+test.describe("Search Functionality Test Suite @master",()=>{
 
     let homePage:HomePage;
     let testConfig:TestConfig;
