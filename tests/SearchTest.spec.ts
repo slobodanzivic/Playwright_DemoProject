@@ -33,6 +33,9 @@ test.describe("Search Functionality Test Suite @master",()=>{
         expect (await searchResultsPage.getSearchResultsHeaderText()).toContain(testConfig.monitorProductName);
         console.log(`Search results header contains product name: ${testConfig.monitorProductName}`);
 
+        expect (await searchResultsPage.getProductTitleText()).toContain(testConfig.monitorProductName);
+        console.log(`Product title contains product name: ${testConfig.monitorProductName}`);
+
     })
 
     test("Search Product Test: Searching for camera",async({page})=>{
@@ -40,7 +43,10 @@ test.describe("Search Functionality Test Suite @master",()=>{
         await homePage.searchProduct(testConfig.cameraProductName);
         expect (await searchResultsPage.getSearchResultsHeaderText()).toContain(testConfig.cameraProductName);
         console.log(`Search results header contains product name: ${testConfig.cameraProductName}`);
-        await page.waitForTimeout(3000);
+
+        expect (await searchResultsPage.getProductTitleText()).toContain(testConfig.cameraProductName);
+        console.log(`Product title contains product name: ${testConfig.cameraProductName}`);
+        
 
     })
 
@@ -49,12 +55,18 @@ test.describe("Search Functionality Test Suite @master",()=>{
         await homePage.searchProduct(testConfig.tabletProductName);
         expect (await searchResultsPage.getSearchResultsHeaderText()).toContain(testConfig.tabletProductName);
         console.log(`Search results header contains product name: ${testConfig.tabletProductName}`);    
+
+        expect (await searchResultsPage.getProductTitleText()).toContain(testConfig.tabletProductName);
+        console.log(`Product title contains product name: ${testConfig.tabletProductName}`);   
+
     })
 
     test("Search Product Test: Search with empty input",async({page})=>{
 
         await homePage.searchProduct(testConfig.emptyProductName);
         expect (await searchResultsPage.getConfirmationMessageText()).toContain("There is no product that matches the search criteria.");
-        console.log(`Search results header contains text: 'There is no product that matches the search criteria.'`);    
+        console.log(`Search results header contains text: 'There is no product that matches the search criteria.'`);
+        
     })
+
 });
