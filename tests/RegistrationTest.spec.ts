@@ -1,3 +1,17 @@
+/**
+ * Test Description: Registration Test to verify that a user can successfully register to the application
+ * 
+    Test steps:
+    1. Navigate to the application URL
+    2. Click on the "My Account" link
+    3. Click on the "Register" option
+    4. Fill in the registration form with valid details
+    5. Click on the radio button to subscribe to the newsletter (Yes/No)
+    6. Accept the privacy policy
+    7. Click on the "Continue" button
+    8. Verify that the user is registered successfully by checking the confirmation message
+ */
+
 import{test,expect,Page}from"@playwright/test";
 import { HomePage } from "../pages/HomePage";
 import{TestConfig}from"../test.config"; 

@@ -1,11 +1,16 @@
-/* Test Description: Logout Test to verify that a user can successfully log out from the application
-    Steps:
+/**
+ *  Test Description: Logout Test to verify that a user can successfully log out from the application
+ * 
+    Test steps:
     1. Navigate to the application URL
     2. Log in using valid credentials
     3. Click on the "My Account" link
     3. Click on the Logout option
     4. Verify that the user is logged out successfully 
-*/
+
+ * Test Tags: @master
+ */ 
+
 import { test, expect, Page } from "@playwright/test"
 import { HomePage } from "../pages/HomePage";
 import { LoginPage } from "../pages/LoginPage";

@@ -1,3 +1,17 @@
+/**
+ * Test description: Search Functionality Test Suite to verify the search feature of the application
+ * 
+ * Tests steps:
+ * 1. Navigate to the application URL   
+ * 2. Search for a product using valid product names (monitor, camera, tablet)
+ * 3. Verify that the search results header and product title contain the searched product name
+ * 4. Search for a product using an empty input
+ * 5. Verify that the appropriate confirmation message is displayed for no search results
+ * 
+ * Test Tags: @master
+ * 
+ */
+
 import{test, expect, Page} from "@playwright/test"
 import { HomePage } from "../pages/HomePage";   
 import { TestConfig } from "../test.config";

@@ -1,3 +1,17 @@
+/**
+ * Test Description: Data Driven Login Test using JSON data provider
+ * 
+ * Test Steps:
+ * 1. Navigate to the application URL
+ * 2. Click on the "My Account" link    
+ * 3. Click on the "Login" option
+ * 4. Enter email address and password from JSON data file
+ * 5. Click on the "Login" button
+ * 6. Verify successful login or error message based on the input data
+ * 
+ * Test Tags: @master
+ */
+
 import { test, expect, Page } from "@playwright/test";
 import { HomePage } from "../pages/HomePage";
 import { LoginPage } from "../pages/LoginPage";
@@ -10,6 +24,7 @@ const jsonPath = "testdata/logindata.json";
 const jsonTestdata = DataProvider.getDataFromJson(jsonPath);
 
 
+test.describe("Data Driven Login Test Suite @master", () => {       
 
 for (const data of jsonTestdata) {
 
@@ -52,3 +67,4 @@ for (const data of jsonTestdata) {
     })
 }
 
+});
