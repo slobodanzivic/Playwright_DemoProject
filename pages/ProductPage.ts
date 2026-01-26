@@ -7,6 +7,7 @@ export class ProductPage {
   private readonly quantityInput: Locator;
   private readonly addToCartButton: Locator;
   private readonly successMessage: Locator;
+  private readonly productPrice: Locator;
 
   // Constructor
   constructor(page: Page) {
@@ -14,6 +15,7 @@ export class ProductPage {
     this.quantityInput = page.locator('input[name="quantity"]');
     this.addToCartButton = page.locator('button#button-cart');
     this.successMessage = page.locator('div.alert.alert-success');
+    this.productPrice = page.locator('ul[class="list-unstyled"] li h2');
   }
 
   // Change product quantity
@@ -29,5 +31,10 @@ export class ProductPage {
   // Get success message text
   async getSuccessMessage(): Promise<string> {
     return (await this.successMessage.textContent()) || "";
+  }
+
+  // Get product price
+  async getProductPrice(): Promise<string> {
+    return (await this.productPrice.textContent()) || "";
   }
 }

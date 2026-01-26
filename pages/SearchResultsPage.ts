@@ -8,7 +8,8 @@ export class SearchResultsPage{
     //Locators
     private readonly searchResultsHeader:Locator;
     private readonly confirmationMessage:Locator;   
-    private productTitle:Locator;
+    private readonly productTitle:Locator;
+    private readonly greyAddToCartBtn: Locator;
 
     //Constructor
     constructor(page:Page){
@@ -16,6 +17,7 @@ export class SearchResultsPage{
         this.searchResultsHeader=page.locator('div#content h1');
         this.confirmationMessage=page.locator('//p[contains(text(),"There is no product that matches the search criteria.")]');
         this.productTitle=page.locator('div.caption h4 a');
+        this.greyAddToCartBtn=page.locator("button[type='button'] span[class='hidden-xs hidden-sm hidden-md']");
     }
 
     //Get Search Results Header Text
@@ -31,5 +33,10 @@ export class SearchResultsPage{
     //Get Product Title Text
     async getProductTitleText():Promise<string>{
         return await this.productTitle.textContent() || "";
-    }   
+    }
+    
+    //Click on greyAddtoCartBtn
+    async clickOnGeyAddToCartBtn(){
+        await this.greyAddToCartBtn.click();
+    }
 }
