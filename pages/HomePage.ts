@@ -11,6 +11,7 @@ export class HomePage{
     private readonly loginLink:Locator;
     private readonly searchBox:Locator; 
     private readonly searchButton:Locator;  
+    private readonly cartButton:Locator;
 
 
     //Constructor
@@ -21,6 +22,7 @@ export class HomePage{
         this.loginLink=page.locator('a[href="https://tutorialsninja.com/demo/index.php?route=account/login"]');
         this.searchBox=page.locator('input[placeholder="Search"]');
         this.searchButton=page.locator('button[class="btn btn-default btn-lg"]');
+        this.cartButton=page.locator('#cart');
     }
 
     async isHomePageExists() {
@@ -90,6 +92,19 @@ async searchProduct(productName:string){
         console.log(`Exeption occured while searching for product '${productName}': ${error}`)
         throw error;
     }   
+}
+
+//Click on Cart Button
+async clickOnCartButton(){
+    try
+    {
+        await this.cartButton.click();
+    }
+    catch(error)
+    {
+        console.log(`Exeption occured while clicking on 'Cart' button: ${error}`)
+        throw error;
+    }
 }
 }
 

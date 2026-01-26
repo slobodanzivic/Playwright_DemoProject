@@ -12,7 +12,9 @@ monitorProductName="Samsung SyncMaster 941BW"
 cameraProductName="Canon EOS 5D"
 tabletProductName="Samsung Galaxy Tab 10.1"
 emptyProductName=""
-productQuntity="2"
+productQuantity="2"
 totalPrice=""
+mobileProductName="iPhone"
+laptopProductName="MacBook Air"
 
 }

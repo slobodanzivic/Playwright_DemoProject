@@ -1,0 +1,8 @@
+Exeption occured while searching for product 'MacBook Air': Error: locator.fill: Target page, context or browser has been closed
+Call log:
+  - waiting for locator('input[placeholder="Search"]')
+    - locator resolved to <input value="" type="text" name="search" placeholder="Search" class="form-control input-lg"/>
+    - fill("MacBook Air")
+  - attempting fill action
+    - waiting for element to be visible, enabled and editable
+

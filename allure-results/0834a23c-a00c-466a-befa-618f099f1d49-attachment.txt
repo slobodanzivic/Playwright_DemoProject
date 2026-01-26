@@ -1,0 +1,4 @@
+Exeption occured while searching for product 'MacBook Air': Error: locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for locator('button[class="btn btn-default btn-lg"]')
+
