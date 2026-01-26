@@ -41,7 +41,7 @@ test.describe("Add to Cart Test Suite", () => {
         await page.close();
     });
 
-    test("Add single product to shopping cart", async ({ page }) => {
+    test("Add single product to shopping cart @master" , async ({ page }) => {
         // Step 2: Enter "iPhone" in the Search box
         await homePage.searchProduct(testConfig.mobileProductName);
 
@@ -81,7 +81,7 @@ test.describe("Add to Cart Test Suite", () => {
 
     });
 
-    test("Add multiple products to shopping cart", async ({ page }) => {
+    test("Add multiple products to shopping cart @master", async ({ page }) => {
         // Search and add iPhone to the cart
         await homePage.searchProduct(testConfig.mobileProductName);
         await searchResultsPage.clickOnGeyAddToCartBtn();
