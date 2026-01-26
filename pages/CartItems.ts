@@ -40,7 +40,7 @@ export class CartItems {
 
   // Get all product names from the cart
   async getAllCartProductNames(): Promise<string[]> {
-    return await this.page.locator('td[class="text-left"] a').allTextContents();
+    return await this.cartProductName.allTextContents();
   }
 
 
