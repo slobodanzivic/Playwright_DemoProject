@@ -19,7 +19,7 @@ export class HomePage{
         this.page=page;
         this.myAccountLink=page.locator('a[title="My Account"] span[class="hidden-xs hidden-sm hidden-md"]');
         this.registerLink=page.locator('a[href="https://tutorialsninja.com/demo/index.php?route=account/register"]');
-        this.loginLink=page.locator('a[href="https://tutorialsninja.com/demo/index.php?route=account/login"]');
+        this.loginLink=page.locator('li[class=\'dropdown open\'] li:nth-child(2) a:nth-child(1)');
         this.searchBox=page.locator('input[placeholder="Search"]');
         this.searchButton=page.locator('button[class="btn btn-default btn-lg"]');
         this.cartButton=page.locator('#cart');

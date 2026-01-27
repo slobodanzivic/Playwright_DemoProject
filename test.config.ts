@@ -7,6 +7,17 @@ appUrl="https://tutorialsninja.com/demo/"
 email="slobodan.m.zivic@gmail.com"
 password= "Test123?"
 
+//Change Password
+newPassword="New321?"
+confirmPassword="New321?"
+mismatchedConfirmPassword="Guest123?"
+
+shortPassword="1ab"                         //3 characters
+longPassword="VeryLongPassword123!@"        //21 characters
+
+minLengthPassword="Abc1"                    //4 characters
+maxLengthPassword="VeryLongPassword123!"    //20 characters
+
 //productdetails
 monitorProductName="Samsung SyncMaster 941BW"
 cameraProductName="Canon EOS 5D"
