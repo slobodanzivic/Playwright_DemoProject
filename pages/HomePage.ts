@@ -7,6 +7,7 @@ export class HomePage{
 
     //Locators
     private readonly myAccountLink:Locator;
+    private readonly myAccountInDropdown:Locator;
     private readonly registerLink:Locator;
     private readonly loginLink:Locator;
     private readonly searchBox:Locator; 
@@ -18,6 +19,7 @@ export class HomePage{
     constructor(page:Page){
         this.page=page;
         this.myAccountLink=page.locator('a[title="My Account"] span[class="hidden-xs hidden-sm hidden-md"]');
+        this.myAccountInDropdown=page.locator('li[class="dropdown open"] ul li:nth-child(1) a');
         this.registerLink=page.locator('a[href="https://tutorialsninja.com/demo/index.php?route=account/register"]');
         this.loginLink=page.locator('li[class=\'dropdown open\'] li:nth-child(2) a:nth-child(1)');
         this.searchBox=page.locator('input[placeholder="Search"]');
@@ -105,6 +107,13 @@ async clickOnCartButton(){
         console.log(`Exeption occured while clicking on 'Cart' button: ${error}`)
         throw error;
     }
+
 }
+
+    //Click on My Account in Dropdown
+    async clickOnMyAccountInDropdown (){
+        await this.myAccountInDropdown.click();     
+    }
 }
+
 

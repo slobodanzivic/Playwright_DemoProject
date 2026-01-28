@@ -12,6 +12,7 @@ export class MyAccountPage{
     private readonly ModifyAddressBookEntriesLink:Locator;
     private readonly ModifyYourWishList:Locator;
     private readonly successMessage:Locator;
+    private readonly subUnsubToNewsletter:Locator;
 
     //Constructor
     constructor(page:Page)      
@@ -24,6 +25,7 @@ export class MyAccountPage{
         this.ModifyAddressBookEntriesLink=page.locator('//a[normalize-space()="Modify your address book entries"]');
         this.ModifyYourWishList=page.locator('//a[normalize-space()="Modify your wish list"]');
         this.successMessage=page.locator('.alert.alert-success.alert-dismissible');
+        this.subUnsubToNewsletter=page.getByText("Subscribe / unsubscribe to newsletter");
 
     }
 
@@ -86,6 +88,12 @@ export class MyAccountPage{
     async getSuccessMessageText():Promise<string>
     {
         return await this.successMessage.textContent() || "";
+    }   
+
+    //Click on "Subscribe / unsubscribe to newsletter" link
+    async clickOnSubUnsubToNewsletter():Promise<void>
+    {
+        await this.subUnsubToNewsletter.click();
     }   
 
     
