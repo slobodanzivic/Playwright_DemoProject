@@ -13,6 +13,7 @@ export class MyAccountPage{
     private readonly ModifyYourWishList:Locator;
     private readonly successMessage:Locator;
     private readonly subUnsubToNewsletter:Locator;
+    private readonly logo :Locator;
 
     //Constructor
     constructor(page:Page)      
@@ -26,6 +27,7 @@ export class MyAccountPage{
         this.ModifyYourWishList=page.locator('//a[normalize-space()="Modify your wish list"]');
         this.successMessage=page.locator('.alert.alert-success.alert-dismissible');
         this.subUnsubToNewsletter=page.getByText("Subscribe / unsubscribe to newsletter");
+        this.logo=page.locator('div#logo h1 a');
 
     }
 
@@ -96,6 +98,11 @@ export class MyAccountPage{
         await this.subUnsubToNewsletter.click();
     }   
 
-    
+    //click on the Logo to navigate to Home Page
+    async clickOnLogo():Promise<void>
+    {
+        await this.logo.click();    
+
+    }
 
 }
