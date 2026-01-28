@@ -1,4 +1,4 @@
-import {test, expect} from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { HomePage } from '../pages/HomePage';
 import { MyAccountPage } from '../pages/MyAccountPage';
 import { TestConfig } from '../test.config';
@@ -12,8 +12,9 @@ test.describe('Add Product to Wish List Tests', () => {
     let newsletterSubscriptionPage: NewsletterSubscriptionPage;
     let testConfig: TestConfig;
     let myWishListPage: MyWishListPage;
-    test.beforeEach(async ({ page }) => {
 
+
+    test.beforeEach(async ({ page }) => {
         //Create page objects
         homePage = new HomePage(page);
         myAccountPage = new MyAccountPage(page);
@@ -25,7 +26,7 @@ test.describe('Add Product to Wish List Tests', () => {
 
     test.afterEach(async ({ page }) => {
         await page.close();
-    }); 
+    });
 
     test('Add Product to Wish List from Home Page @master', async ({ page }) => {
 
