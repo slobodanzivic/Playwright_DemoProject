@@ -1,4 +1,3 @@
-import { th } from "@faker-js/faker";
 import { Page, Locator } from "@playwright/test"
 
 export class HomePage {

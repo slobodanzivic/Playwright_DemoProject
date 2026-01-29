@@ -7,6 +7,9 @@ appUrl="https://tutorialsninja.com/demo/"
 email="slobodan.m.zivic@gmail.com"
 password= "Test123?"
 
+//Unregistered email
+unregisteredEmail="unregistered@example.com"
+
 //Change Password
 newPassword="New321?"
 confirmPassword="New321?"

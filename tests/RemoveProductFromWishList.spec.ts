@@ -55,11 +55,9 @@ test.describe('Remove Product from Wish List Tests', () => {
 
         //Verify success message
         const emptyMessageText = await myWishListPage.getEmptyWishListMessageText();
+
         expect(emptyMessageText).toContain("Your wish list is empty.");
-
         expect (await homePage.isWishListZeroVisible()).toBeTruthy();
-
-
 
     });
 

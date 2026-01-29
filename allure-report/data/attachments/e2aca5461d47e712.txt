@@ -1,0 +1,7 @@
+Exeption occured while searching for product 'MacBook Air': Error: locator.click: Error: strict mode violation: getByRole('textbox', { name: 'Search' }) resolved to 2 elements:
+    1) <input type="text" name="search" value="iPhone" placeholder="Search" class="form-control input-lg"/> aka getByRole('textbox', { name: 'Search', exact: true })
+    2) <input type="text" name="search" value="iPhone" id="input-search" class="form-control" placeholder="Keywords"/> aka getByRole('textbox', { name: 'Search Criteria' })
+
+Call log:
+  - waiting for getByRole('textbox', { name: 'Search' })
+

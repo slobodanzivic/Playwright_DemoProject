@@ -1,7 +1,0 @@
-Exeption occured while clicking on 'Login': Error: locator.click: Error: strict mode violation: locator('a[href="https://tutorialsninja.com/demo/index.php?route=account/login"]') resolved to 2 elements:
-    1) <a href="https://tutorialsninja.com/demo/index.php?route=account/login">Login</a> aka locator('#top-links').getByText('Login')
-    2) <a class="list-group-item" href="https://tutorialsninja.com/demo/index.php?route=account/login">Login</a> aka getByRole('link', { name: 'Login' })
-
-Call log:
-  - waiting for locator('a[href="https://tutorialsninja.com/demo/index.php?route=account/login"]')
-

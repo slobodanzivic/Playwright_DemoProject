@@ -84,14 +84,14 @@ test.describe("Add to Cart Test Suite", () => {
     test("Add multiple products to shopping cart @master", async ({ page }) => {
         // Search and add iPhone to the cart
         await homePage.searchProduct(testConfig.mobileProductName);
-        await searchResultsPage.clickOnGeyAddToCartBtn();
+        await searchResultsPage.clickOnAddToCartBtn();
 
         let successMessage = await productPage.getSuccessMessage();
         expect(successMessage).toContain("Success");
 
         // Search and add MacBook Air to the cart
         await homePage.searchProduct(testConfig.laptopProductName);
-        await searchResultsPage.clickOnGeyAddToCartBtn();
+        await searchResultsPage.clickOnAddToCartBtn();
 
         successMessage = await productPage.getSuccessMessage();
         expect(successMessage).toContain("Success");

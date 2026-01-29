@@ -36,7 +36,7 @@ export class SearchResultsPage{
     }
     
     //Click on greyAddtoCartBtn
-    async clickOnGeyAddToCartBtn(){
+    async clickOnAddToCartBtn(){
         await this.greyAddToCartBtn.click();
     }
 }
