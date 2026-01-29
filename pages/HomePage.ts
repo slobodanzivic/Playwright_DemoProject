@@ -16,6 +16,8 @@ export class HomePage {
     private readonly commonProductName: Locator;
     private readonly commonAddToWishListButton: Locator;
     private readonly wishListLink: Locator; 
+    private readonly wishListZero: Locator;
+    
 
 
     //Constructor
@@ -31,6 +33,7 @@ export class HomePage {
         this.commonProductName = page.locator('div.caption h4 a');
         this.commonAddToWishListButton = page.locator('button[data-original-title="Add to Wish List"]');
         this.wishListLink = page.locator('a[id="wishlist-total"] span[class="hidden-xs hidden-sm hidden-md"]');
+        this.wishListZero = page.locator('div#top-links ul li:nth-child(3) a span', {hasText:"Wish List (0)"});
     }
 
     async isHomePageExists() {
@@ -119,7 +122,11 @@ export class HomePage {
         await this.wishListLink.click();
     }   
 
-
+    //Is locator wishListZero visible   
+    async isWishListZeroVisible(): Promise<boolean> {
+        return await this.wishListZero.isVisible();
+    }
+    
     async addProductToWishList() {
 
         const productCount = await this.commonProductName.count();
@@ -127,7 +134,7 @@ export class HomePage {
 
         for (let index = 0; index < productCount; index++) {
             const name = await this.commonProductName.nth(index).textContent();
-            
+
             if (name && name.trim().toLowerCase() === "canon eos 5d") {
                 await this.commonAddToWishListButton.nth(index).click();
                 break;

@@ -37,9 +37,6 @@ test.describe('Add Product to Wish List Tests', () => {
         await page.locator('input[name="password"]').fill(testConfig.password);
         await page.locator('input[value="Login"]').click();
 
-        await page.waitForTimeout(2000);
-
-
         //Click on Logo to navigate to Home Page
         await myAccountPage.clickOnLogo();
 
@@ -51,11 +48,20 @@ test.describe('Add Product to Wish List Tests', () => {
         //Click on Wish List link
         await homePage.clickOnWishListLink();
 
-        await page.waitForTimeout(4000);
+        await page.waitForTimeout(2000);
 
         //Verify that product is added to Wish List
-        const productNameText = await myWishListPage.getProductNameText();
-        expect(productNameText.trim()).toBe("Canon EOS 5D");
+        const productNames = await myWishListPage.getColumnValuesByHeader(
+            page,
+            'table[class="table table-bordered table-hover"]',
+            'Product Name'
+        );
+        expect(productNames).toContain("Canon EOS 5D");
 
-    });
+        //Remove product from Wish List
+        await myWishListPage.clickOnRemoveButton();
+        expect(await myWishListPage.getSuccessMessageText()).toContain("Success: You have modified your wish list!");
+
+    })
+    
 });
